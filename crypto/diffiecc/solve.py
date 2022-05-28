@@ -62,31 +62,17 @@ n = 69420
 
 G = Point(55066263022277343669578718895168534326250603453777594175500187360389116729240, 32670510020758816978083085130507043184471273380659243275938904335757337482424)
 
-d_A = randint(1, n - 1)
-Q_A = double_and_add(G, d_A)
-print(f'({Q_A.x},{Q_A.y})')
+from ast import literal_eval as parse_tuple
+from pwn import *
 
-Q_B_x, Q_B_y = input().split(',')
-Q_B = Point(int(Q_B_x), int(Q_B_y))
+context.log_level = "debug"
+io = remote("localhost", 7077)
 
-secret = double_and_add(B, d_A).x
-secret = long_to_bytes(secret)
-
-with open('flag.txt', 'rb') as f:
-    flag = f.read()
-
-# Make sure the key is long enough to encrypt everything
-while len(secret) < len(flag):
-    secret += secret
-
-# Send the encrypted flag
-print(bytes_to_long(bytes(a ^ b for a, b in zip(flag, secret))))
-
-## It's just an xor, but here's how you would decrypt in python, for your convenience:
-
-## Do the same key stretching thing as above
-#while len(secret) < len(encrypted):
-#    secret += secret
-#
-## print decrypted flag
-#print(bytes(a ^ b for a, b in zip(encrypted, secret)))
+d_B = randint(1, 69420)
+B = double_and_add(G, d_B)
+A = Point(*parse_tuple(io.recvline().decode()))
+io.sendline(f"{B.x},{B.y}")
+secret = long_to_bytes(double_and_add(A, d_B).x)
+c = long_to_bytes(int(io.recvline().decode()))
+flag = xor(secret, c)
+print(flag)
