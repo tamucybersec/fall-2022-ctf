@@ -1,0 +1,4 @@
+# Casino
+Come gamble your life savings away at my new casino! If you can manage to earn enough winnings, you can even purchase a flag!
+## Solution
+TODO
