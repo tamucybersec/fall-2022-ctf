@@ -39,7 +39,7 @@ and that outputs:
 gigem{19comment se va? i think i might actually have some flaws in this poorly implemented autokey cipher gigem{ch3ck_y0ur_cryp70}
 ```
 
-and we have our flag!
+And we have our flag! In hindsight looking at the output, our crib was likely very wrong and the start of the plaintext is something entirely different, but lucky for us our flag is at the end of the message.
 ```
 gigem{ch3ck_y0ur_cryp70}
 ```
