@@ -2,11 +2,17 @@ import flask
 import os
 
 def escape_shell_cmd(data):
-    for char in data:
-        if char in '&#;`|*?~<>^()[]{}$\\':
-            return False
-        else:
-            return True
+    filterList = ['&','#',';','`','|','*','?','~','<','>','^','(',')','[',']','{','}','$','\\']
+
+    input_org = data
+    input_mod = ''
+
+    input_mod = ''.join((filter(lambda char: char not in filterList, input_org)))
+
+    if input_org == input_mod:
+        return True
+    else:
+        return False
 
 app = flask.Flask(__name__)
 
