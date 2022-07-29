@@ -2,7 +2,7 @@
 
 ## Description
 
-The administrator changed their password and we lost access to their account. We need to regain access to continue our opperations.
+The administrator changed their password and we lost access to their account. We need to regain access to continue our operations.
 
 ## Dev notes
 
