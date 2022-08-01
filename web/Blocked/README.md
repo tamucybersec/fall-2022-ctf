@@ -2,7 +2,7 @@
 
 ## Description
 
-I think we brute forced a bit to hard, and now our IP has been blocked.
+Good luck getting access to my admin page. I blocked all IPs except for localhost.
 
 ## Dev notes
 
