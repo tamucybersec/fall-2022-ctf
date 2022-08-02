@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  php-web-server:
+    container_name: tamuctf-exfiltration-apache
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./php/src:/var/www/html/
+    ports:
+      - 8000:80
+  db:
+    image: mysql:5.7
+    container_name: tamuctf-exfiltration-mysql
+    build: ./sql
+    command: mysqld --user=root --verbose --secure-file-priv="/tmp/"
+    volumes:
+      - ./sql/database-setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./flag.txt:/tmp/flag.txt
+    environment:
+      MYSQL_DATABASE: "users"
+      MYSQL_ROOT_PASSWORD: "1ffe9de58b913dbff7b369c3312f46ee"
+      MYSQL_USER: "ro_user"
+      MYSQL_PASSWORD: "9b31dcc8229d2ed5519a7e4072bdba66"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+
