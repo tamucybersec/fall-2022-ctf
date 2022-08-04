@@ -3,4 +3,6 @@
 
 
 ## Solution
-<TODO>
+
+The pcap file contains a variety of dns requests for sites following the scheme `[character].google.com`. Following UDP stream 1 reveals that each request contains one charater from the flag.
+
