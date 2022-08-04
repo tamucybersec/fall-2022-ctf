@@ -4,5 +4,9 @@ Oops, the server has blocked its users from downloading unencrypted content. Get
 
 **Note: If you can find a way to make it harder please add to it or suggest something**
 
+## Dev Notes
+
+The user has access to `chall.py`
+
 ## Solution
 <TODO>
