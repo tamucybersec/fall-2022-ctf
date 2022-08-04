@@ -47,23 +47,18 @@ def encrypt(mode_str, data):
     data = data[0x4a:]
     iv = get_random_bytes(AES.block_size)
     if mode_str == 1:
-        print("encrypted with CBC")
         cipher = AES.new(key, AES.MODE_CBC, iv)
         ciphertext = cipher.encrypt(pad(data, AES.block_size))
     elif mode_str == 2:
-        print("encrypted with CFB")
         cipher = AES.new(key, AES.MODE_CFB, iv)
         ciphertext = cipher.encrypt(pad(data, AES.block_size))
     elif mode_str == 3:
-        print("encrypted with OFB")
         cipher = AES.new(key, AES.MODE_OFB, iv)
         ciphertext = cipher.encrypt(pad(data, AES.block_size))
     elif mode_str == 4:
-        print("encrypted with CTR")
         cipher = AES.new(key, AES.MODE_CTR, iv)
         ciphertext = cipher.encrypt(pad(data, AES.block_size))
     elif mode_str == 5:
-        print("encrypted with ECB")
         cipher = AES.new(key, AES.MODE_ECB)
         ciphertext = cipher.encrypt(pad(data, AES.block_size))
 
