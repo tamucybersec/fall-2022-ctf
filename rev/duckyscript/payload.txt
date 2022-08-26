@@ -1,0 +1,9 @@
+REM Literally just hello world but the hello world is a flag
+ATTACKMODE HID
+DELAY 200
+WINDOWS r
+DELAY 120
+STRING powershell "echo 'gigem{duckyscript_simple_decoding}'; pause"
+ENTER
+DELAY 200
+ATTACKMODE STORAGE
