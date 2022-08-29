@@ -8,7 +8,7 @@ enum DEBUG_MODE{False, True};
 char* vuln() {
 	char guess[8];
 	puts("Password:");
-	scanf("%16s", guess);
+	scanf("%9s", guess);
 
 	if(strncmp(guess, "hunter2", 7) != 0) {
 		puts("Password incorrect.");
