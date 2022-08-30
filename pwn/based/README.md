@@ -17,4 +17,19 @@ make run
 ```
 
 ## Solution
-TODO
+This problem is based on stack pivoting, except we're not really trying to get our own code execution or set up a ROP chain. Instead, we're just trying to overwrite the debug variable to execute the syscall. The `guess` variable in `vuln()` is only 8 bytes, but `scanf()` mistakely reads in 9 bytes. 
+
+Cheese mode activated.
+
+When prompted for a username, write to the entire buffer to ensure there are no null bytes. Then, wWrite to all 8 bytes of `guess` (which overwrites the next byte after `guess` to a null byte because strings). We've now overwritten the base pointer for `main()` which will affect how it determines where the `debug` variable is. Now when the program checks `debug`, it uses the wrong base pointer and looks somewhere in our `username` buffer (which isn't null) so it appears that `debug` is now true and the system call is activated.
+
+Input to get flag:
+```
+Username:
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Password:
+hunter21
+Entering debug mode
+cat flag.txt
+gigem{based_and_stack_pivoted}
+``` 
