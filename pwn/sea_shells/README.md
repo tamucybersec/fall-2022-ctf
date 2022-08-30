@@ -1,4 +1,4 @@
-# Favorite Number
+# Sea Shells 
 
 Sally sold some seashells by the seashore. Try to guess how many she sold, I bet you will never be able to!
 
