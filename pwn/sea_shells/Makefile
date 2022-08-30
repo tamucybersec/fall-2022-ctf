@@ -1,7 +1,7 @@
 CC := $(or $(CC),gcc) 
 CFLAGS := -w -fno-stack-protector -z execstack 
-NAME := sea_shells 
-PORT := 9999 
+NAME := sea_shells
+PORT := 9999
 all: $(NAME)
 
 clean: .PHONY
