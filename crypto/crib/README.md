@@ -11,4 +11,4 @@ This is likely going to be one of the 100-point challenges that we will provide 
 Provided files are `chall.py` and `README.md`
 
 ## Solution
-
+Since we know that the flag will start with `gigem{`, we have a crib that will allow us to determine the flag by simply XORing the crib and the ciphertext. Do this to get the key, then use the key to decrypt and get the flag.
