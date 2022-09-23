@@ -1,0 +1,10 @@
+# BASE-ics 2
+Maybe making the encoding less obvious might make things harder to break?
+Idk I fell asleep in math class.
+
+```
+Z2lnZW17RW5Db0RpTmdfQ2hBbkdlU19SZVByRXNFblRhVGlPbl9Ob1RfZEF0QV8weEZPT0RTfQ==
+```
+
+## Solution
+**TODO**
