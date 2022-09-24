@@ -1,5 +1,5 @@
 CC := $(or $(CC),gcc)
-CFLAGS := -masm=intel -no-pie
+CFLAGS := -masm=intel
 NAME := empty
 PORT := 7000
 all: $(NAME)
