@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    background-color: #F3F3F3;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    color: #3C1874;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background: #004E7C;
+    z-index: 1200;
+    height: 60px;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.site-title, .site-title:visited {
+    text-decoration: none;
+    color: #F3F3F3;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 54px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+}
+
+.nav-bar {
+    float: right;
+    line-height: 54px;
+}
+
+.icon {
+    height: 32px;
+    width: 32px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    vertical-align: middle;
+    display: inline-flex;
+}
+
+.page-link, .page-link:visited {
+    text-decoration: none;
+    color: #F3F3F3;
+    margin-right: 20px;
+    font-size: 26px;
+}
+
+.page-content {
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    display: block;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.search-bar {
+    margin-top: 100px;
+}
+
+.input {
+    padding-left: 15px;
+    background-color: #DCE1E3;
+    border-radius: 10px;
+    border-style: solid;
+    height: 35px;
+    width: 85%;
+    font-size: 20px;
+}
+
+.results {
+    margin-top: 20px;
+    width: 90%;
+    background-color: #DCE1E3;
+    color: #222222
+}
+

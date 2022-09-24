@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  php-web-server:
+    container_name: tamuctf-simple-sql-apache
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./php/src:/var/www/html/
+    ports:
+      - 8000:80
+  db:
+    image: mysql:5.7
+    container_name: tamuctf-simple-sql-mysql
+    build: ./sql
+    command: mysqld --user=root --verbose
+    volumes:
+      - ./sql/database-setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    environment:
+      MYSQL_DATABASE: "users"
+      MYSQL_ROOT_PASSWORD: "e909fc146c2e9112057b183df0f35d3b"
+      MYSQL_USER: "ro_user"
+      MYSQL_PASSWORD: "79d83d77d77007b1cc98c1ffff3020b5"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+
+
