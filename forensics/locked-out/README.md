@@ -20,7 +20,7 @@ john hash.txt
 
 One it's found, run the same command but with the --show flag to see the password
 ```
-$ john-the-ripper hash.txt --show
+$ john hash.txt --show
 nibs.zip:test124::nibs.zip:Nibbles.png, Lil_Nibs.png, CyberHam.png, Draft.png:nibs.zip
 
 1 password hash cracked, 0 left
