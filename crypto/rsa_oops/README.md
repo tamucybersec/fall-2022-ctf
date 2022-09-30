@@ -17,3 +17,7 @@ make clean
 ```
 
 ## Solution
+Chosen ciphertext attack that takes advantage of the homomorphic properties of RSA
+See solve script
+
+Flag: `gigem{r54_h4s_b0und5}`
