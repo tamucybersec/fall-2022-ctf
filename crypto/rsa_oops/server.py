@@ -17,14 +17,14 @@ print('Public Key: %s' % hex(e))
 
 print("\nHere's the flag: %s" % hex(pow(flag, e, n)))
 
-print("I can decrypt any message for ya, just enter it as hex here")
+print("I can decrypt any message for ya (not the flag ofc), just enter the hex value below")
 try:
 	user_input = int(input('> '), 16)
 except:
 	print("uh oh, something went wrong there. try again")
 	exit(0)
 
-if user_input == pow(flag, e, n):
+if pow(user_input, d, n) == flag:
 	print("sorry, you're going to have to work a little harder than that")
 	exit(0)
 
