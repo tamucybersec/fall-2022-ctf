@@ -1,0 +1,18 @@
+[challenge]
+name = "agent"
+points = 500
+files = []
+flag = "ctf{example}"
+
+[docker]
+build = "-t agent ."
+run = "-d --read-only --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "agent"
+port = 80
+
+[nginx]
+type = "site"
+balance-method = "ip_hash"
+instances = 5

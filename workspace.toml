@@ -1,0 +1,55 @@
+[workspace]
+
+ctf-name = "cybrclub-ctf"
+remote = "hulk"
+
+[network]
+# manually managed ports in range [57000-57999]
+# auto-managed ports in range 55000+
+base-ssh-port = 57023
+base-chal-port = 55000
+
+[nginx]
+
+domain = "ctf.cybrclub.com"
+
+# define install paths for generated nginx configs
+[nginx.remote]
+run-as = "-u root"
+nginx-sites = "/etc/nginx/sites-available"
+nginx-streams = "/etc/nginx/streams-available"
+
+[ctfd]
+url = "0.0.0.0:8000"
+scoring-type = "dynamic"
+decay-limit = 30
+minimum = 100
+
+[virtual-machines]
+
+[virtual-machines.settings]
+iso = "ubuntu-20.04.1-server.iso"
+iso-url = "https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"
+
+[virtual-machines.settings.remote]
+# invokes sudo
+run-as = "-i -u vagrantboxes"
+install-path = "/home/vagrantboxes/tamuctf-2022"
+
+# memory and disk in MB
+[virtual-machines.vm.frontend]
+name = "cybrclub-ctfd"
+cores = 2
+memory = 2048
+disk-size = 20480
+type = "ctfd"
+ip = ""
+
+[virtual-machines.vm.0]
+name = "cybrclub-chals-0"
+cores = 2
+memory = 2048
+disk-size = 20480
+challenges = ["web/Agent", "pwn/based"]
+type = "challenges"
+ip = ""

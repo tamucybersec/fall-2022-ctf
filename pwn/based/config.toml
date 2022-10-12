@@ -1,0 +1,18 @@
+[challenge]
+name = "based"
+points = 500
+files = []
+flag = "gigem{based_and_stack_pivoted}"
+
+[docker]
+build = "-t based --build-arg name=based --build-arg port=7000 ."
+run = "-d --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "based"
+port = 7000
+
+[nginx]
+type = "stream"
+balance-method = "least_conn"
+instances = 5
