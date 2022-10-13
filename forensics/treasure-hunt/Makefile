@@ -1,4 +1,4 @@
-NAME := pwn2004
+NAME := treasure-hunt
 
 build:
 	docker build -t $(NAME) . 
