@@ -1,0 +1,18 @@
+[challenge]
+name = "casino"
+points = 500
+files = []
+flag = "gigem{g4mbl3_r3sp0n51b1y_k1d5}"
+
+[docker]
+build = "-t casino --build-arg name=casino --build-arg port=7003 ."
+run = "-d --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "casino"
+port = 7003
+
+[nginx]
+type = "stream"
+balance-method = "least_conn"
+instances = 5

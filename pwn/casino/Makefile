@@ -1,7 +1,7 @@
 CC := $(or $(CC),gcc)
 CFLAGS := -O0
 NAME := casino
-PORT := 7000
+PORT := 7003
 all: $(NAME)
 
 clean: .PHONY
