@@ -2,7 +2,7 @@
 
 ## Description
 
-Good luck getting access to my admin page. I blocked all IPs except for localhost.
+include::description.adoc[]
 
 ## Dev notes
 

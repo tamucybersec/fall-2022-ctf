@@ -2,9 +2,7 @@
 
 ## Description
 
-No story here. Just a simple web challenge.
-
-Tip: The flag is in /flag.txt
+include::description.adoc[]
 
 ## Dev Notes
 
