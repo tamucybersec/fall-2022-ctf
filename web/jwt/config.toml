@@ -1,0 +1,18 @@
+[challenge]
+name = "jwt"
+points = 500
+files = []
+flag = "gigem{hardcoded_secrets_in_plaintext}"
+
+[docker]
+build = "-t jwt ."
+run = "-d --read-only --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "jwt"
+port = 9005
+
+[nginx]
+type = "site"
+balance-method = "ip_hash"
+instances = 5
