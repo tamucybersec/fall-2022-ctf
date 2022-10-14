@@ -1,7 +1,7 @@
 [challenge]
 name = "lottery"
 points = 500
-files = []
+files = ["lottery.zip"]
 flag = "gigem{unb3l13v4bly_lucky}"
 
 [docker]
