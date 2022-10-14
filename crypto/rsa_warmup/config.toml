@@ -1,0 +1,18 @@
+[challenge]
+name = "rsa_warmup"
+points = 500
+files = []
+flag = "gigem{rs4_1s_fun!}"
+
+[docker]
+build = "-t pwn_warmup --build-arg name=pwn_warmup --build-arg port=8888 ."
+run = "-d --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "rsa_warmup"
+port = 8888
+
+[nginx]
+type = "stream"
+balance-method = "least_conn"
+instances = 5
