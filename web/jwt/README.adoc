@@ -1,6 +1,6 @@
 # JWT
 
-include::description.adoc[]
+include::docs/description.adoc[]
 
 ## Dev notes:
 By default is running on localhost:7000. Provided `template.py` and a link to the server

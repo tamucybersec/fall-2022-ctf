@@ -2,7 +2,7 @@
 
 ## Description
 
-include::desctription.adoc[]
+include::docs/desctription.adoc[]
 
 ## Dev Notes
 
