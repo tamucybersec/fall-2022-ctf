@@ -1,7 +1,7 @@
 CC := $(or $(CC),gcc)
 CFLAGS := -O0
 NAME := pwn_warmup
-PORT := 7000
+PORT := 7001
 all: $(NAME)
 
 clean: .PHONY
