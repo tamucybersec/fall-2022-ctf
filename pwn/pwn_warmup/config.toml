@@ -1,0 +1,18 @@
+[challenge]
+name = "pwn_warmup"
+points = 500
+files = []
+flag = "gigem{too_ez_no_brain_needed}"
+
+[docker]
+build = "-t pwn_warmup --build-arg name=pwn_warmup --build-arg port=7000 ."
+run = "-d --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "pwn_warmup"
+port = 7000
+
+[nginx]
+type = "stream"
+balance-method = "least_conn"
+instances = 5
