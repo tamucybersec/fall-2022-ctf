@@ -1,7 +1,7 @@
 [challenge]
 name = "casino"
 points = 500
-files = []
+files = ["casino.zip"]
 flag = "gigem{g4mbl3_r3sp0n51b1y_k1d5}"
 
 [docker]
