@@ -1,16 +1,16 @@
 [challenge]
-name = "agent"
+name = "blocked"
 points = 500
 files = []
-flag = "ctf{y0u_jus7_g0t_c0c0nu7_m4ll3d}"
+flag = "gigem{n0t_th3_m0st_s3cur3_auth_m34sure}"
 
 [docker]
-build = "-t agent ."
+build = "-t blocked ."
 run = "-d --read-only --restart=always --cpus=1 --memory=32m"
 
 [service]
-sni = "agent"
-port = 9000
+sni = "blocked"
+port = 9001
 
 [nginx]
 type = "site"

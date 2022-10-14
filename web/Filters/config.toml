@@ -1,16 +1,16 @@
 [challenge]
-name = "agent"
+name = "filters"
 points = 500
-files = []
-flag = "ctf{y0u_jus7_g0t_c0c0nu7_m4ll3d}"
+files = ["src/index.php"]
+flag = "gigem{l3ss_s1mpl3_lfi_vuln_0xd34db33f}"
 
 [docker]
-build = "-t agent ."
+build = "-t filters ."
 run = "-d --read-only --restart=always --cpus=1 --memory=32m"
 
 [service]
-sni = "agent"
-port = 9000
+sni = "filters"
+port = 9003
 
 [nginx]
 type = "site"
