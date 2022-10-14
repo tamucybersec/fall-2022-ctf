@@ -1,7 +1,7 @@
 CC := $(or $(CC),gcc)
 CFLAGS := -fno-stack-protector
 NAME := lottery
-PORT := 7007
+PORT := 7002
 all: $(NAME)
 
 clean: .PHONY

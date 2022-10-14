@@ -1,0 +1,18 @@
+[challenge]
+name = "lottery"
+points = 500
+files = []
+flag = "gigem{unb3l13v4bly_lucky}"
+
+[docker]
+build = "-t lottery --build-arg name=lottery --build-arg port=7002 ."
+run = "-d --restart=always --cpus=1 --memory=32m"
+
+[service]
+sni = "lottery"
+port = 7002
+
+[nginx]
+type = "stream"
+balance-method = "least_conn"
+instances = 5
