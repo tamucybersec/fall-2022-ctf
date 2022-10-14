@@ -1,7 +1,7 @@
 [challenge]
 name = "based"
 points = 500
-files = []
+files = ["based.zip"]
 flag = "gigem{based_and_stack_pivoted}"
 
 [docker]
