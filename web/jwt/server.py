@@ -27,7 +27,7 @@ def login():
         if 'admin' in decoded and decoded['admin'] == True:
             return {"res": f"Here's your flag, admin: {flag}"}
         elif 'username' in decoded:
-            return {"res": f"Hello {username}, thanks for testing my API!"}
+            return {"res": f"Hello {decoded['username']}, thanks for testing my API!"}
         else:
             return {"err": "problem with session"}
     else:
